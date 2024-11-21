@@ -1,3 +1,4 @@
+
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoMdHome } from "react-icons/io";
 import { FaShopify } from "react-icons/fa";
@@ -11,13 +12,13 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { user, signOutUser } = useContext(AuthContext);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false); 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
-                navigate("/login"); 
-                setIsMenuOpen(false); 
+                navigate("/login");
+                setIsMenuOpen(false);
             })
             .catch((error) => {
                 console.log("ERROR", error.message);
@@ -25,38 +26,41 @@ const Navbar = () => {
     };
 
     const handleMenuClick = () => {
-        setIsMenuOpen(false); 
+        setIsMenuOpen(false);
     };
 
     const links = (
         <>
             <li>
-    <NavLink to="/" className="text-lg" onClick={handleMenuClick}>
-        <IoMdHome className="text-xl text-yellow-500" /> Home
-    </NavLink>
-</li>
-<li>
-    <NavLink to="/brands" className="text-lg" onClick={handleMenuClick}>
-        <FaShopify className="text-xl text-yellow-500" /> Brands
-    </NavLink>
-</li>
-
+                <NavLink to="/" className="text-lg" onClick={handleMenuClick}>
+                    <IoMdHome className="text-xl text-yellow-500" /> Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/brands" className="text-lg" onClick={handleMenuClick}>
+                    <FaShopify className="text-xl text-yellow-500" /> Brands
+                </NavLink>
+            </li>
             {user && (
                 <li>
-                    <NavLink to="/my_profile" className="text-lg" onClick={handleMenuClick}>
+                    <NavLink
+                        to="/my_profile"
+                        className="text-lg"
+                        onClick={handleMenuClick}
+                    >
                         <CgProfile className="text-xl" /> My Profile
                     </NavLink>
                 </li>
             )}
             <li>
-    <NavLink to="/about_dev" className="text-lg flex items-center" onClick={handleMenuClick}>
-        <i className="fas fa-user-circle text-yellow-500 mr-2"></i> About Dev
-    </NavLink>
-</li>
-
-
-           
-
+                <NavLink
+                    to="/about_dev"
+                    className="text-lg flex items-center"
+                    onClick={handleMenuClick}
+                >
+                    <i className="fas fa-user-circle text-yellow-500 mr-2"></i> About Dev
+                </NavLink>
+            </li>
             {user && (
                 <li className="block lg:hidden">
                     <span className="text-lg">{user.email}</span>
@@ -72,7 +76,6 @@ const Navbar = () => {
             </Helmet>
 
             <div className="navbar-start">
-                
                 <div className="dropdown">
                     <div
                         tabIndex={0}
@@ -95,11 +98,11 @@ const Navbar = () => {
                             />
                         </svg>
                     </div>
-                    
+
                     {isMenuOpen && (
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-blue-700 rounded-box z-[1] mt-3 w-screen p-4 shadow flex items-center justify-start"
+                            className="menu menu-sm dropdown-content bg-gray-400 rounded-box z-[1] mt-3 w-screen p-4 shadow flex items-center justify-start"
                         >
                             {links}
 
@@ -122,7 +125,7 @@ const Navbar = () => {
                                             onClick={handleMenuClick}
                                         >
                                             <img
-                                                className="w-5 h-5 "
+                                                className="w-5 h-5"
                                                 src="https://img.icons8.com/?size=80&id=bqav3t6eU9Yw&format=png"
                                                 alt="Register"
                                             />
@@ -144,29 +147,34 @@ const Navbar = () => {
                     DiscountPRO
                 </Link>
             </div>
+
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">{links}</ul>
             </div>
 
-            
             <div className="navbar-end flex items-center gap-2">
                 {user ? (
                     <>
-                        
-                        <div className="border-green-500 border-2 rounded-full flex items-center justify-center">
-                            {user.photoURL ? (
-                                <img
-                                    src={user.photoURL}
-                                    alt="User"
-                                    className="w-10 h-10 rounded-full"
-                                />
-                            ) : (
-                                <span className="text-white font-bold text-lg">
-                                    {user.email ? user.email[0].toUpperCase() : "U"}
-                                </span>
-                            )}
+                        <div className="flex items-center gap-2">
+                            <div className="border-green-500 border-2 rounded-full flex items-center justify-center">
+                                {user.photoURL ? (
+                                    <img
+                                        src={user.photoURL}
+                                        alt="User"
+                                        className="w-10 h-10 rounded-full"
+                                    />
+                                ) : (
+                                    <span className="text-white font-bold text-lg">
+                                        {user.email ? user.email[0].toUpperCase() : "U"}
+                                    </span>
+                                )}
+                            </div>
+                            {/* Show email on md and larger devices */}
+                            <span className="hidden md:block text-white text-lg">
+                                {user.email}
+                            </span>
                         </div>
-                        
+
                         <a
                             href="#"
                             onClick={handleSignOut}
