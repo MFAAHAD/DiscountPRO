@@ -1,0 +1,159 @@
+[
+  {
+    "_id": "001",
+    "brand_name": "Daraz",
+    "rating": 4.6,
+    "description": "Bangladesh's leading online marketplace.",
+    "brand_logo": "https://i.ibb.co.com/5h3QDhB/Daraz-Logo.png",
+    "coupons": [
+      {
+        "coupon_code": "DARAZ10",
+        "description": "Enjoy 10% off on your first purchase.",
+        "expiry_date": "2024-12-31",
+        "condition": "Applicable for new users only",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "BDFREE",
+        "description": "Free delivery on orders above ৳1000.",
+        "expiry_date": "2025-01-15",
+        "condition": "Excludes international shipping",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop_Link": "https://www.daraz.com.bd",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "_id": "002",
+    "brand_name": "Aarong",
+    "rating": 4.8,
+    "description": "Authentic Bangladeshi lifestyle and fashion.",
+    "brand_logo": "https://i.ibb.co.com/hZQXkfh/aarong-logo-481-A469803-seeklogo-com.png",
+    "coupons": [
+      {
+        "coupon_code": "AARONG20",
+        "description": "20% off on all Aarong exclusive collections.",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid on purchases over ৳2000",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "BOGO50BD",
+        "description": "Buy one, get 50% off on select items.",
+        "expiry_date": "2024-12-15",
+        "condition": "Only on traditional wear",
+        "coupon_type": "BOGO"
+      }
+    ],
+    "shop_Link": "https://www.aarong.com",
+    "category": "Fashion",
+    "isSaleOn": true
+  },
+  {
+    "_id": "003",
+    "brand_name": "Foodpanda",
+    "rating": 4.7,
+    "description": "Order food from your favorite restaurants with ease.",
+    "brand_logo": "https://i.ibb.co.com/fSfQWHB/foodpanda-logo-551-BD51321-seeklogo-com.png",
+    "coupons": [
+      {
+        "coupon_code": "PANDA50",
+        "description": "50% off on your first order.",
+        "expiry_date": "2025-01-01",
+        "condition": "Maximum discount ৳200",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "LUNCHDEAL",
+        "description": "Save ৳100 on lunch orders.",
+        "expiry_date": "2024-12-20",
+        "condition": "Valid for orders over ৳500",
+        "coupon_type": "Flat Discount"
+      }
+    ],
+    "shop_Link": "https://www.foodpanda.com.bd",
+    "category": "Food & Beverages",
+    "isSaleOn": true
+  },
+  {
+    "_id": "004",
+    "brand_name": "Evaly",
+    "rating": 4.2,
+    "description": "Your ultimate destination for exclusive deals.",
+    "brand_logo": "https://i.ibb.co.com/tsV1Vph/evaly-logo-1-E75-B0-C011-seeklogo-com.png",
+    "coupons": [
+      {
+        "coupon_code": "EVALY30",
+        "description": "Get 30% off on fitness equipment.",
+        "expiry_date": "2024-12-10",
+        "condition": "Minimum spend ৳3000",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "FREEMAT",
+        "description": "Free yoga mat on orders over ৳5000.",
+        "expiry_date": "2024-11-25",
+        "condition": "Limited stock available",
+        "coupon_type": "Freebie"
+      }
+    ],
+    "shop_Link": "https://www.evaly.com.bd",
+    "category": "goods and products",
+    "isSaleOn": true
+  },
+  {
+    "_id": "005",
+    "brand_name": "Rokomari",
+    "rating": 4.9,
+    "description": "Discover the joy of reading with the best collection of books.",
+    "brand_logo": "https://i.ibb.co.com/MZH1S2q/rokomari-logo-02-A1-B1094-C-seeklogo-com.png",
+    "coupons": [
+      {
+        "coupon_code": "BOOKLOVER",
+        "description": "10% off on all academic books.",
+        "expiry_date": "2025-02-01",
+        "condition": "Applicable on orders above ৳500",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "SHIPFREE",
+        "description": "Free shipping on orders over ৳2000.",
+        "expiry_date": "2024-12-31",
+        "condition": "Standard delivery only",
+        "coupon_type": "Free Shipping"
+      }
+    ],
+    "shop_Link": "https://www.rokomari.com",
+    "category": "Books",
+    "isSaleOn": false
+  },
+  {
+    "_id": "006",
+    "brand_name": "Bengal Furniture",
+    "rating": 4.5,
+    "description": "Stylish and durable furniture for your home.",
+    "brand_logo": "https://i.ibb.co.com/2k3KjJT/regal-furniture-logo-3-BD608263-E-seeklogo-com.png",
+    "coupons": [
+      {
+        "coupon_code": "BENGAL15",
+        "description": "15% off on living room furniture.",
+        "expiry_date": "2024-12-15",
+        "condition": "Valid for online purchases only",
+        "coupon_type": "Percentage Discount"
+      },
+      {
+        "coupon_code": "SAVE500",
+        "description": "Get ৳500 off on orders over ৳7000.",
+        "expiry_date": "2024-11-30",
+        "condition": "One-time use per customer",
+        "coupon_type": "Flat Discount"
+      }
+    ],
+    "shop_Link": "https://www.bengalfurniture.com",
+    "category": "Home & Living",
+    "isSaleOn": true
+  }
+  
+]
