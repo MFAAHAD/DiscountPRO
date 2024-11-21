@@ -42,7 +42,7 @@ const ForgetPassword = () => {
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h2 className="text-red-500 text-4xl">Forgot Password</h2>
+                    <h2 className="text-blue-500 text-4xl">Recover Account</h2>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={(e) => e.preventDefault()} className="card-body">

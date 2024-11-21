@@ -16,7 +16,7 @@ export default function Footer() {
                             DiscountPRO
                         </Link>
                         <p className="text-gray-400 mt-4">
-                            Leading the way in cutting-edge technology and innovation.
+                        Driving the future with groundbreaking technology and innovative solutions.
                         </p>
                     </div>
 

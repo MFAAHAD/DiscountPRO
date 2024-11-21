@@ -62,7 +62,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-gradient-to-r from-[#000000] to-[#3533cd] text-white sticky top-0 z-50">
+        <div className="navbar bg-[#004aad] text-white sticky top-0 z-50">
             <Helmet>
                 <title>Discount Pro | Login</title>
             </Helmet>

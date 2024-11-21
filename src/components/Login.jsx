@@ -1,136 +1,67 @@
-// import { useContext } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../provides/AuthProviders";
-// import { Helmet } from "react-helmet";
-
-// const Login = () => {
-//     const navigate = useNavigate();
-
-//     const { signInUser, signInWithGoogle } = useContext(AuthContext);
-//     const handleLogIn = e => {
-//         e.preventDefault();
-//         const email = e.target.email.value;
-//         const password = e.target.password.value;
-
-//         // console.log(email, password);
-//         signInUser(email, password)
-//             .then(result => {
-//                 console.log(result);
-//                 e.target.reset();
-//                 navigate('/');
-//             })
-//             .catch(error => {
-//                 console.log("ERROR", error.message);
-//             })
-//     }
-
-//     const handleGoogleSignIn = () => {
-//         signInWithGoogle()
-//             .then(result => {
-//                 console.log(result.user);
-//                 navigate('/');
-//             })
-//             .catch(error => {
-//                 console.log("ERROR", error.message);
-//             })
-//     }
-
-//     return (
-
-//         <div className="hero bg-base-200 min-h-screen">
-
-//             <Helmet>
-//                 <title>Discount Pro | Login</title>
-//             </Helmet>
-
-//             <div className="hero-content flex-col">
-//                 <div className="text-center lg:text-left">
-//                     <h1 className="text-3xl font-bold">Login now!</h1>
-//                 </div>
-//                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-//                     <form onSubmit={handleLogIn} className="card-body">
-//                         <div className="form-control">
-//                             <label className="label">
-//                                 <span className="label-text">Email</span>
-//                             </label>
-//                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
-//                         </div>
-//                         <div className="form-control">
-//                             <label className="label">
-//                                 <span className="label-text">Password</span>
-//                             </label>
-//                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-//                             <label className="label">
-//                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-//                             </label>
-//                         </div>
-//                         <div className="form-control mt-6">
-//                             <button className="btn btn-primary">Login</button>
-//                         </div>
-//                     </form>
-//                     <p className="m-4"> Are your new user? Please <Link className="underline text-red-600" to="/register"> Register</Link></p>
-//                     <p onClick={handleGoogleSignIn} className="btn btn-ghost bg-gray-300">Google</p>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Login;
-
-
-
-
-
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provides/AuthProviders";
 import { Helmet } from "react-helmet";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importing eye icons for toggle
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const navigate = useNavigate();
-    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signOutUser } = useContext(AuthContext);
 
     // State to manage the visibility of the password
     const [passwordVisible, setPasswordVisible] = useState(false);
 
-    const handleLogIn = e => {
+    const handleLogIn = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
 
         signInUser(email, password)
-            .then(result => {
+            .then((result) => {
                 console.log(result);
+                toast.success("Login successful! Welcome back!", {
+                    position: "top-center",
+                });
                 e.target.reset();
-                navigate('/');
+                navigate("/"); // Navigate after showing toast
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log("ERROR", error.message);
-            })
-    }
+                toast.error("Wrong email or password please create a new account", {
+                    position: "top-center",
+                });
+            });
+    };
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then(result => {
+            .then((result) => {
                 console.log(result.user);
-                navigate('/');
+                toast.success("Logged in with Google successfully!", {
+                    position: "top-center",
+                });
+                navigate("/");
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log("ERROR", error.message);
-            })
-    }
+                toast.error("Google Sign-In failed. Please try again.", {
+                    position: "top-center",
+                });
+            });
+    };
 
     return (
         <div className="hero bg-base-200 min-h-screen">
             <Helmet>
-                <title>Discount Pro | Login</title>
+                <title>DiscountPRO| Login</title>
             </Helmet>
 
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl font-bold">Login now!</h1>
+                    <h1 className="text-3xl font-bold">Sign in Now!</h1>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleLogIn} className="card-body">
@@ -170,8 +101,8 @@ const Login = () => {
                                 </span>
                             </div>
                             <label className="label">
-                                <Link to="/forget-password" href="#" className="label-text-alt link link-hover">
-                                    Forgot password?
+                                <Link to="/forget-password" className="label-text-alt link link-hover">
+                                    Forget password!
                                 </Link>
                             </label>
                         </div>
@@ -185,11 +116,15 @@ const Login = () => {
                             Register
                         </Link>
                     </p>
+
+                    <p className="text-center p-2">Sign Up with google</p>
                     <p onClick={handleGoogleSignIn} className="btn btn-ghost bg-gray-300">
+                        <FcGoogle className="w-7 h-7" />
                         Google
                     </p>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
