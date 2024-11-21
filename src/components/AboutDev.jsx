@@ -9,7 +9,7 @@ const AboutDev = () => {
 
             <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-xl">
                 <div className="text-center">
-                    {/* Author's photo */}
+                    
                     <img
                         src="https://i.ibb.co.com/d2R1Twp/Neutral-Pink-Modern-Circle-Shape-Linked-In-Profile-Picture-1.png" // Replace with your photo URL
                         alt="MD Fahad Mia"
