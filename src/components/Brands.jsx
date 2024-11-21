@@ -42,9 +42,10 @@ const Brands = () => {
                 <title>Discount Pro | Brands</title> 
             </Helmet>
 
-            <h2 className="font-bold text-5xl text-center mb-6 bg-gradient-to-r from-rose-900 to-indigo-600 text-transparent bg-clip-text animate-pulse">
-                Brands Details
-            </h2>
+            <h2 className="font-semibold text-3xl text-center mb-6 text-gray-800 dark:text-gray-200 bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text animate-pulse">
+            Top Brand Collection
+</h2>
+
 
             <div className="mb-6 text-center">
                 <input
