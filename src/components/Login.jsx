@@ -2,16 +2,14 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provides/AuthProviders";
 import { Helmet } from "react-helmet";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importing eye icons for toggle
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const navigate = useNavigate();
     const { signInUser, signInWithGoogle, signOutUser } = useContext(AuthContext);
-
-    // State to manage the visibility of the password
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const handleLogIn = (e) => {
@@ -26,7 +24,7 @@ const Login = () => {
                     position: "top-center",
                 });
                 e.target.reset();
-                navigate("/"); // Navigate after showing toast
+                navigate("/");
             })
             .catch((error) => {
                 console.log("ERROR", error.message);
@@ -56,7 +54,7 @@ const Login = () => {
     return (
         <div className="hero bg-base-200 min-h-screen">
             <Helmet>
-                <title>DiscountPRO| Login</title>
+                <title>DiscountPRO | Login</title>
             </Helmet>
 
             <div className="hero-content flex-col">

@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "../route/PrivateRoute";
 import { Helmet } from "react-helmet";
-// import fakeData from "../../public/fakeData.json"
 
 const BrandPage = () => {
   const { id } = useParams();
@@ -14,7 +13,6 @@ const BrandPage = () => {
   useEffect(() => {
     const fetchBrand = async () => {
       try {
-        // const response = await fetch("/public/fakeData.json");
         const response = await fetch("/fakeData.json");
         const data = await response.json();
         const selectedBrand = data.find((item) => item._id === id);

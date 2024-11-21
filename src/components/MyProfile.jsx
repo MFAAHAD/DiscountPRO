@@ -7,7 +7,6 @@ const MyProfile = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Redirect if no user is logged in
   if (!user) {
     navigate("/login");
     return null;
@@ -16,7 +15,7 @@ const MyProfile = () => {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-50">
       <Helmet>
-        <title>Discount Pro | My Profile</title>
+        <title>DiscountPRO | My Profile</title>
       </Helmet>
 
       <div

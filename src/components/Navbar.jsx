@@ -52,7 +52,6 @@ const Navbar = () => {
                     About Dev
                 </NavLink>
             </li>
-            {/* User Email */}
             {user && (
                 <li className="block lg:hidden">
                     <span className="text-lg">{user.email}</span>
@@ -64,7 +63,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-[#004aad] text-white sticky top-0 z-50">
             <Helmet>
-                <title>Discount Pro | Login</title>
+                <title>DiscountPRO | Login</title>
             </Helmet>
 
             <div className="navbar-start">

@@ -99,9 +99,8 @@ const Home = () => {
     return (
         <div className="home">
             <Helmet>
-                <title>Discount Pro | Home</title>
+                <title>DiscountPRO | Home</title>
             </Helmet>
-            {/* Banner with Slider */}
             <section className="banner">
                 <div className="flex flex-wrap md:flex-nowrap overflow-hidden">
                     <img

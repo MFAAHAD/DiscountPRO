@@ -1,16 +1,3 @@
-// import { BiError } from "react-icons/bi";
-
-
-// const ErrorPage = () => {
-//     return (
-//         <div className="flex justify-center items-center min-h-screen">
-//             <h2 className="text-8xl font-bold text-red-600 flex justify-center items-center gap-3"><BiError /> ERROR! 404</h2>
-//         </div>
-//     );
-// };
-
-// export default ErrorPage;
-
 
 import { Helmet } from "react-helmet";
 import { BiError } from "react-icons/bi";
@@ -18,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
     const navigate = useNavigate();
-
-    // Handle navigation to home
     const handleGoHome = () => {
         navigate("/");
     };

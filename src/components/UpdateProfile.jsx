@@ -23,7 +23,7 @@ const UpdateProfile = () => {
     return (
         <div className="flex justify-center items-center min-h-screen">
             <Helmet>
-                <title>Discount Pro | Profile Update</title>
+                <title>DiscountPRO | Profile Update</title>
             </Helmet>
             <div className="card bg-base-100 shadow-lg p-6 w-80">
                 <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
