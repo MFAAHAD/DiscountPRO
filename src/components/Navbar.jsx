@@ -31,15 +31,16 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink to="/" className="text-lg" onClick={handleMenuClick}>
-                    <IoMdHome className="text-xl" /> Home
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/brands" className="text-lg" onClick={handleMenuClick}>
-                    <FaShopify className="text-xl" /> Brands
-                </NavLink>
-            </li>
+    <NavLink to="/" className="text-lg" onClick={handleMenuClick}>
+        <IoMdHome className="text-xl text-yellow-500" /> Home
+    </NavLink>
+</li>
+<li>
+    <NavLink to="/brands" className="text-lg" onClick={handleMenuClick}>
+        <FaShopify className="text-xl text-yellow-500" /> Brands
+    </NavLink>
+</li>
+
             {user && (
                 <li>
                     <NavLink to="/my_profile" className="text-lg" onClick={handleMenuClick}>
@@ -48,10 +49,14 @@ const Navbar = () => {
                 </li>
             )}
             <li>
-                <NavLink to="/about_dev" className="text-lg" onClick={handleMenuClick}>
-                    About Dev
-                </NavLink>
-            </li>
+    <NavLink to="/about_dev" className="text-lg flex items-center" onClick={handleMenuClick}>
+        <i className="fas fa-user-circle text-yellow-500 mr-2"></i> About Dev
+    </NavLink>
+</li>
+
+
+           
+
             {user && (
                 <li className="block lg:hidden">
                     <span className="text-lg">{user.email}</span>
